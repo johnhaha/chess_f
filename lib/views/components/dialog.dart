@@ -1,0 +1,66 @@
+import 'package:bean_client/constants/styles/colors.dart';
+import 'package:bean_client/constants/styles/theme.dart';
+import 'package:flutter/material.dart';
+
+showTextAlert(
+    BuildContext context, String title, String content, Function onConfirm) {
+  return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Theme.of(context).backgroundColor,
+          title: Text(title),
+          content: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Container(
+              color: Theme.of(context).backgroundColor,
+              // height: 40,
+              child: Text(content),
+            ),
+          ),
+          actions: [
+            TextButton(
+                style: textButtonStyle,
+                onPressed: () {
+                  onConfirm();
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  "确认",
+                  style: TextStyle(color: TextColor),
+                ))
+          ],
+        );
+      });
+}
+
+showWidgetAlert(BuildContext context, String title, List<Widget> children,
+    Function onConfirm,
+    {double height: 300}) {
+  return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        var size = MediaQuery.of(context).size;
+        return AlertDialog(
+          backgroundColor: Theme.of(context).backgroundColor,
+          title: Text(title),
+          content: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Container(
+              color: Theme.of(context).backgroundColor,
+              height: height,
+              child: Column(
+                children: children,
+              ),
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  onConfirm();
+                },
+                child: Text("确认"))
+          ],
+        );
+      });
+}
