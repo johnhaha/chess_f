@@ -1,4 +1,4 @@
-import 'package:bean_client/configs/host.dart';
+import 'package:template/configs/host.dart';
 
 String get addSkillUrl => CocoaHost + "/api/skill/add";
 String get getUserSkillBaseUrl => CocoaHost + "/api/skill/user";

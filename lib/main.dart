@@ -1,5 +1,5 @@
-import 'package:bean_client/constants/styles/theme.dart';
-import 'package:bean_client/views/pages/tabPage/tabPage.dart';
+import 'package:template/constants/styles/theme.dart';
+import 'package:template/views/pages/tabPage/tabPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {

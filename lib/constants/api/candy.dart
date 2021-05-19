@@ -1,4 +1,4 @@
-import 'package:bean_client/configs/host.dart';
+import 'package:template/configs/host.dart';
 
 var rateAddr = CandyHost + "/api/rate/add";
 var getTargetRatesAddr = CandyHost + "/api/rate/target";

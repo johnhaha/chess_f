@@ -1,5 +1,5 @@
-import 'package:bean_client/constants/styles/colors.dart';
-import 'package:bean_client/constants/styles/theme.dart';
+import 'package:template/constants/styles/colors.dart';
+import 'package:template/constants/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 showTextAlert(

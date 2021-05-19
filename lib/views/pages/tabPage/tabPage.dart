@@ -1,9 +1,9 @@
-import 'package:bean_client/constants/styles/colors.dart';
-import 'package:bean_client/constants/styles/theme.dart';
-import 'package:bean_client/views/pages/find/find.dart';
-import 'package:bean_client/views/pages/index/index.dart';
-import 'package:bean_client/views/pages/me/me.dart';
-import 'package:bean_client/views/pages/message/message.dart';
+import 'package:template/constants/styles/colors.dart';
+import 'package:template/constants/styles/theme.dart';
+import 'package:template/views/pages/find/find.dart';
+import 'package:template/views/pages/index/index.dart';
+import 'package:template/views/pages/me/me.dart';
+import 'package:template/views/pages/message/message.dart';
 import 'package:flutter/material.dart';
 
 class TabPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:bean_client/constants/api/sugar.dart';
-import 'package:bean_client/services/data/image.dart';
-import 'package:bean_client/utility/image.dart';
+import 'package:template/constants/api/sugar.dart';
+import 'package:template/services/data/image.dart';
+import 'package:template/utility/image.dart';
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
 

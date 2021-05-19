@@ -1,6 +1,6 @@
-import 'package:bean_client/constants/styles/colors.dart';
-import 'package:bean_client/constants/styles/size.dart';
-import 'package:bean_client/views/components/spacer.dart';
+import 'package:template/constants/styles/colors.dart';
+import 'package:template/constants/styles/size.dart';
+import 'package:template/views/components/spacer.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 

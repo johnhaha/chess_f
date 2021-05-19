@@ -1,4 +1,4 @@
-import 'package:bean_client/constants/styles/size.dart';
+import 'package:template/constants/styles/size.dart';
 import 'package:flutter/material.dart';
 
 import 'colors.dart';

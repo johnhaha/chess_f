@@ -1,4 +1,4 @@
-import 'package:bean_client/constants/styles/colors.dart';
+import 'package:template/constants/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class StarRate extends StatelessWidget {

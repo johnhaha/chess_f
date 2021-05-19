@@ -1,4 +1,4 @@
-import 'package:bean_client/configs/host.dart';
+import 'package:template/configs/host.dart';
 
 var makeOrderAddr = GrillHost + "/api/order/add";
 var getUserCurrentOrderAddr = GrillHost + "/api/order/user/current";

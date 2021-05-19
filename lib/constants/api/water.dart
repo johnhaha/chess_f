@@ -1,4 +1,4 @@
-import 'package:bean_client/configs/host.dart';
+import 'package:template/configs/host.dart';
 
 var userLoginAddr = WaterHost + "/api/login";
 

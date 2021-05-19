@@ -1,5 +1,5 @@
-import 'package:bean_client/constants/styles/colors.dart';
-import 'package:bean_client/constants/styles/size.dart';
+import 'package:template/constants/styles/colors.dart';
+import 'package:template/constants/styles/size.dart';
 import 'package:flutter/material.dart';
 
 class CardBox extends StatelessWidget {

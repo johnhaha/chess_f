@@ -1,6 +1,6 @@
-import 'package:bean_client/constants/styles/colors.dart';
-import 'package:bean_client/views/components/appBar.dart';
-import 'package:bean_client/views/components/cardBox.dart';
+import 'package:template/constants/styles/colors.dart';
+import 'package:template/views/components/appBar.dart';
+import 'package:template/views/components/cardBox.dart';
 import 'package:flutter/material.dart';
 
 class Index extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:bean_client/constants/styles/theme.dart';
+import 'package:template/constants/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class NormalButton extends StatelessWidget {
