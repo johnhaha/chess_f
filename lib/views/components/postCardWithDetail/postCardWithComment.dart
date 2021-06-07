@@ -87,7 +87,7 @@ class _PostCardWithCommentState extends State<PostCardWithComment> {
             children: [
               Text(
                 getTimeShowFromDate(widget.post.createdAt),
-                style: disBodyText,
+                style: bodyText2,
               ),
               Row(
                 children: [

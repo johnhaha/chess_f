@@ -18,6 +18,7 @@ var textTheme = TextTheme(
   bodyText1: bodyText1,
   bodyText2: bodyText2,
 );
+//text
 var bodyText1 = TextStyle(
     fontSize: BodySize1, color: TextColor, fontWeight: FontWeight.normal);
 var bodyText2 = TextStyle(
@@ -26,12 +27,12 @@ var bodyText3 = TextStyle(
     fontSize: BodySize1, color: DisColor, fontWeight: FontWeight.normal);
 var whiteBodyText = TextStyle(
     fontSize: BodySize1, color: CardWhiteColor, fontWeight: FontWeight.normal);
-var disBodyText = TextStyle(
-    fontSize: BodySize2, color: DisColor, fontWeight: FontWeight.normal);
 var smallBodyText = TextStyle(
     fontSize: BodySize2, color: TextColor, fontWeight: FontWeight.normal);
 var highLightText = TextStyle(
     fontSize: BodySize1, color: HighLightColor, fontWeight: FontWeight.bold);
+
+//title
 var titleText1 = TextStyle(
     fontSize: TitleSize1, color: TextColor, fontWeight: FontWeight.normal);
 var titleText2 = TextStyle(
@@ -75,7 +76,7 @@ var bigGreyButtonStyle = ButtonStyle(
     )),
     shadowColor:
         MaterialStateProperty.all<Color>(CardWhiteColor.withOpacity(0)),
-    textStyle: MaterialStateProperty.all<TextStyle>(disBodyText));
+    textStyle: MaterialStateProperty.all<TextStyle>(bodyText2));
 
 var normalButtonStyle = ButtonStyle(
     backgroundColor: MaterialStateProperty.resolveWith<Color>(

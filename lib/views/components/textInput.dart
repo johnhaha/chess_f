@@ -48,7 +48,7 @@ class CustomTextInput extends StatelessWidget {
                 ),
                 Text(
                   dis,
-                  style: disBodyText,
+                  style: bodyText2,
                 )
               ],
             ),

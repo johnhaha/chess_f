@@ -39,7 +39,7 @@ class CommentCard extends StatelessWidget {
                 children: [
                   Text(
                     getTimeShowFromDate(comment.createdAt),
-                    style: disBodyText,
+                    style: bodyText2,
                   ),
                   if (userID != comment.authorId)
                     FeedBackMenu(
