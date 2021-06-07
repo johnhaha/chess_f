@@ -1,4 +1,4 @@
-import 'package:template/constants/styles/theme.dart';
+import 'package:template/constants/theme.dart';
 import 'package:template/views/pages/tabPage/tabPage.dart';
 import 'package:flutter/material.dart';
 

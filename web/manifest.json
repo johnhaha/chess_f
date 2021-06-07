@@ -1,6 +1,6 @@
 {
-    "name": "bean_client",
-    "short_name": "bean_client",
+    "name": "template",
+    "short_name": "template",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

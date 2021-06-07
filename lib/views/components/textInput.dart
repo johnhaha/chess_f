@@ -1,3 +1,4 @@
+import 'package:template/constants/theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextInput extends StatelessWidget {
@@ -7,47 +8,47 @@ class CustomTextInput extends StatelessWidget {
     required this.title,
     this.hint,
     this.keyBoard,
-    this.measure,
     this.maxLine = 1,
     this.maxLength = 200,
     this.dis = "",
-    this.long = true,
-    this.withTitle = true,
+    required this.width,
     this.focusNode,
+    this.padding = 20,
+    this.height = 60,
+    this.tailling,
   }) : super(key: key);
 
   final TextEditingController textEditingController;
   final String title;
   final String? hint;
   final TextInputType? keyBoard;
-  final String? measure;
   final int maxLine;
   final int maxLength;
   final String dis;
-  final bool long;
-  final bool withTitle;
+  final double width;
+  final double height;
+  final Widget? tailling;
   final FocusNode? focusNode;
+  final double padding;
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-    var size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: long ? 20 : 0),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (withTitle) ...[
+          if (title != "") ...[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   title,
-                  style: theme.textTheme.headline2,
+                  style: titleText3,
                 ),
                 Text(
                   dis,
-                  style: theme.textTheme.bodyText2,
+                  style: disBodyText,
                 )
               ],
             ),
@@ -56,19 +57,21 @@ class CustomTextInput extends StatelessWidget {
             ),
           ],
           Container(
-            width: long ? size.width : size.width / 3,
+            width: width,
+            height: height,
             decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(12)),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
               child: Row(
+                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(
+                  Flexible(
                     child: TextField(
                       focusNode: focusNode,
                       style: TextStyle(
-                          letterSpacing: 1, fontSize: 14, height: 1.3),
+                          letterSpacing: 1, fontSize: 14, height: 1.0),
                       maxLines: maxLine,
                       maxLength: maxLength,
                       controller: textEditingController,
@@ -83,11 +86,7 @@ class CustomTextInput extends StatelessWidget {
                           counterText: ""),
                     ),
                   ),
-                  if (measure != null)
-                    Text(
-                      measure!,
-                      style: Theme.of(context).textTheme.bodyText2,
-                    )
+                  if (tailling != null) tailling!
                 ],
               ),
             ),

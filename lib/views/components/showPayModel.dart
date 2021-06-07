@@ -1,5 +1,5 @@
-import 'package:template/constants/styles/colors.dart';
-import 'package:template/constants/styles/theme.dart';
+import 'package:template/constants/colors.dart';
+import 'package:template/constants/theme.dart';
 import 'package:flutter/material.dart';
 
 void showPayModel(BuildContext context, Function buySkill) {

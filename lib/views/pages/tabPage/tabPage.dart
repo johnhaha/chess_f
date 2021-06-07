@@ -1,5 +1,4 @@
-import 'package:template/constants/styles/colors.dart';
-import 'package:template/constants/styles/theme.dart';
+import 'package:template/constants/colors.dart';
 import 'package:template/views/pages/find/find.dart';
 import 'package:template/views/pages/index/index.dart';
 import 'package:template/views/pages/me/me.dart';

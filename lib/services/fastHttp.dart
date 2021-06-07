@@ -30,10 +30,13 @@ Future<Map<String, dynamic>?> fastGet(String url,
 }
 
 Future<Map<String, dynamic>?> fastPost(String url, Map<String, dynamic> body,
-    {auth = false, token = ''}) async {
+    {auth = false, token = '', isSearch = false}) async {
   var dio = Dio(options);
   if (auth) {
     dio.options.headers['Authorization'] = 'Bearer $token';
+  }
+  if (isSearch) {
+    dio.options.headers['X-Meili-API-Key'] = 'Y0urVery-S3cureAp1K3y';
   }
   try {
     var response = await dio.post(url, data: body);

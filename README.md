@@ -1,4 +1,4 @@
-# bean_client
+# template
 
 A new Flutter project.
 

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bean_client">
+    package="com.example.template">
    <application
-        android:label="bean_client"
+        android:label="template"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

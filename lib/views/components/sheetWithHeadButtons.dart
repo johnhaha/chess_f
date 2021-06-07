@@ -1,6 +1,5 @@
+import 'package:template/views/components/theButtons.dart';
 import 'package:flutter/material.dart';
-
-import 'normalButton.dart';
 
 class SheetWithHeadButton extends StatelessWidget {
   const SheetWithHeadButton(
@@ -55,8 +54,10 @@ class SheetWithHeadButton extends StatelessWidget {
                           )),
                       if (showSubmit)
                         NormalButton(
-                          buttonText: topRightButtonText,
-                          onTap: submit,
+                          title: topRightButtonText,
+                          onPress: () {
+                            submit();
+                          },
                         )
                     ],
                   ),
