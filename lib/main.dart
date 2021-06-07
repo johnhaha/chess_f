@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'bean',
+      title: 'template',
       theme: appTheme,
       debugShowCheckedModeBanner: false,
       home: TabPage(),

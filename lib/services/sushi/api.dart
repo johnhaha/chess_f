@@ -17,7 +17,7 @@ String get sushiHost {
 
 var getUserMsgAddr = sushiHost + "/api/msg/user";
 
-const ApplyMsgCode = "bean1";
+const ApplyMsgCode = "template1";
 
 //push
 var addPushDeviceAddr = sushiHost + "/api/push/device/new";

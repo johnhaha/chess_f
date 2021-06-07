@@ -1,3 +1,5 @@
+import 'package:template/services/water/data.dart';
+
 class Comment {
   Comment({
     required this.id,
@@ -94,5 +96,21 @@ class GetManyTargetCommentNumRes {
         data: List<int>.from(json["data"].map((x) => x)),
         message: json["message"],
         success: json["success"],
+      );
+}
+
+class CommentWithUser {
+  CommentWithUser({
+    required this.comment,
+    required this.user,
+  });
+
+  Comment comment;
+  UserInfo user;
+
+  factory CommentWithUser.fromJson(Map<String, dynamic> json) =>
+      CommentWithUser(
+        comment: Comment.fromJson(json["comment"]),
+        user: UserInfo.fromJson(json["user"]),
       );
 }

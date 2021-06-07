@@ -1,4 +1,4 @@
-const AppName = "bean";
+const AppName = "template";
 const AppVersion = 0.1;
 const Hosts = [
   "http://localhost",

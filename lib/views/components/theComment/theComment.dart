@@ -1,6 +1,5 @@
 import 'package:template/constants/configs.dart';
 import 'package:template/constants/theme.dart';
-import 'package:template/services/bean/data.dart';
 import 'package:template/services/candy/comment.dart';
 import 'package:template/services/candy/data.dart';
 import 'package:template/utility/time.dart';
