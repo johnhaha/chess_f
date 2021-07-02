@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:template/data/appData.dart';
+import 'package:template/data/common/user.dart';
 import 'package:template/data/userData.dart';
-import 'package:template/services/sushi/data.dart';
-import 'package:template/services/sushi/handlers.dart';
-import 'package:template/services/water/data.dart';
-import 'package:template/services/water/handlers.dart';
-import 'package:template/utility/device.dart';
+import 'package:template/handlers/device.dart';
 
 extension LoginProvider on BuildContext {
   Future login(User user, String token) async {
@@ -16,17 +13,15 @@ extension LoginProvider on BuildContext {
     read(userData).setToken(token);
     var prefs = await SharedPreferences.getInstance();
     await prefs.setString('token', token);
-    read(appData).getUserAppData(user.uid);
-    var apn = await getApnDeviceID();
-    if (apn != null) {
-      await addPushDevice(user.uid, apn, PushChanel.ios, PushSupplier.apple);
-    }
+    await registerUserDevice(user.uid);
+    await read(appData).getUserAppData(user.uid);
   }
 
   Future logout() async {
     read(userData).removeToken();
     read(userData).removeUser();
     read(userData).userLogOut();
+    read(appData).clearAppData();
     var prefs = await SharedPreferences.getInstance();
     await prefs.remove('token');
   }
@@ -39,7 +34,7 @@ extension LoginProvider on BuildContext {
       var token = prefs.getString('token');
       print(token);
       if (token != null) {
-        var res = await tokenLogin(token);
+        var res = await read(userData).tokenLogin(token);
         if (res != null && res.success) {
           await this.login(res.data!, res.token!);
           return true;
@@ -52,11 +47,13 @@ extension LoginProvider on BuildContext {
   Future<bool> userSignOut() async {
     var login = read(userData).login;
     if (login) {
-      print("you are loged in");
+      print("you are loged in, let's log out");
       var prefs = await SharedPreferences.getInstance();
       var token = prefs.getString('token');
+      var userID = read(userData).user!.uid;
+      var deviceID = read(userData).deviceID;
       if (token != null) {
-        var res = await signOut(token);
+        var res = await read(userData).userLogout(token, userID, deviceID);
         if (res) {
           this.logout();
           return true;

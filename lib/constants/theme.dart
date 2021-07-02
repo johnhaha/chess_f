@@ -4,7 +4,7 @@ import 'package:template/constants/size.dart';
 import 'colors.dart';
 
 var appTheme = ThemeData(
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     backgroundColor: PageColor,
     primaryColor: MainColor,
     errorColor: AlertColor,
@@ -18,7 +18,17 @@ var textTheme = TextTheme(
   bodyText1: bodyText1,
   bodyText2: bodyText2,
 );
-//text
+
+var bgGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [PageColor.withOpacity(0.2), PageColor.withOpacity(0.8)]);
+var bgGradient2 = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [PageColor.withOpacity(0), PageColor.withOpacity(0.8)]);
+
+//body text
 var bodyText1 = TextStyle(
     fontSize: BodySize1, color: TextColor, fontWeight: FontWeight.normal);
 var bodyText2 = TextStyle(
@@ -32,11 +42,11 @@ var smallBodyText = TextStyle(
 var highLightText = TextStyle(
     fontSize: BodySize1, color: HighLightColor, fontWeight: FontWeight.bold);
 
-//title
+//title text
 var titleText1 = TextStyle(
     fontSize: TitleSize1, color: TextColor, fontWeight: FontWeight.normal);
 var titleText2 = TextStyle(
-    fontSize: TitleSize2, color: TextColor, fontWeight: FontWeight.normal);
+    fontSize: TitleSize2, color: TextColor, fontWeight: FontWeight.bold);
 var titleText3 = TextStyle(
     fontSize: TitleSize3, color: TextColor, fontWeight: FontWeight.normal);
 

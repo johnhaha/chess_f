@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:template/data/common/user.dart';
 import 'package:template/data/userData.dart';
 
-extension UserInfo on BuildContext {
+extension UserInfos on BuildContext {
   bool getUserLogin() {
     var login = read(userData).login;
     return login;
@@ -15,6 +16,13 @@ extension UserInfo on BuildContext {
       if (user != null) {
         return user.uid;
       }
+    }
+  }
+
+  UserInfo? getUserInfo() {
+    var user = read(userData).user;
+    if (user != null) {
+      return user.userInfo;
     }
   }
 

@@ -10,6 +10,11 @@ extension NavigationExtension on BuildContext {
   Future popUp(Widget child) {
     return Navigator.push(this, createRoute(child));
   }
+
+  void popBack(int n) {
+    var count = 0;
+    Navigator.of(this).popUntil((_) => count++ >= n);
+  }
 }
 
 Route createRoute(Widget child) {
@@ -19,7 +24,6 @@ Route createRoute(Widget child) {
       var begin = Offset(0.0, 1.0);
       var end = Offset.zero;
       var curve = Curves.ease;
-
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
       return SlideTransition(

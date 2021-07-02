@@ -1,5 +1,3 @@
-const AppName = "template";
-const AppVersion = 0.1;
 const Hosts = [
   "http://localhost",
   "http://192.168.50.133",
@@ -16,4 +14,7 @@ const SampleNetworkImage = "image/sample.jpg";
 const SampleUserID = "75bcd23";
 const SampleImageID = "1fc2a24c-8e81-433e-9794-f41b3bc5dead";
 
-const UserAgreeUrl = "https://www.notion.so/efa23d2b24564e65bfac63320f7f1215";
+const UserAgreeUrl = "https://www.notion.so/d2f1bc8a700f45ada379ef36c7d7fd18";
+const PrivacyUrl = "https://www.notion.so/6b1131230c484441acb8e1fc117601f0";
+
+const JpushAppKey = "ea350587d6d3d5d08b6d3d24";

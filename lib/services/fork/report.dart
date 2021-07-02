@@ -1,6 +1,6 @@
-import 'package:template/constants/configs.dart';
-import 'package:template/services/fastHttp.dart';
+import 'package:template/constants/info.dart';
 import 'package:template/services/fork/api.dart';
+import 'package:template/utility/fastHttp.dart';
 
 Future<bool> addReport(
     String userID, String targetID, String targetType, String des) async {

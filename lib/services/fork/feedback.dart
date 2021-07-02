@@ -1,7 +1,7 @@
-import 'package:template/constants/configs.dart';
-import 'package:template/services/fastHttp.dart';
+import 'package:template/constants/info.dart';
 import 'package:template/services/fork/api.dart';
-import 'package:template/utility/device.dart';
+import 'package:template/handlers/device.dart';
+import 'package:template/utility/fastHttp.dart';
 
 Future<bool> addFeedback(String userID, String content, bool login) async {
   var url = addFeedbackAddr;
