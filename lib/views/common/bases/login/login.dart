@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:template/views/common/icon/clickIcon.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 import 'package:template/constants/colors.dart';
 import 'package:template/constants/configs.dart';
@@ -6,7 +7,6 @@ import 'package:template/constants/theme.dart';
 import 'package:template/extensions/login.dart';
 import 'package:template/extensions/navigator.dart';
 import 'package:template/views/common/bases/webView.dart';
-import 'package:template/views/common/buttons/bigButton.dart';
 import 'package:template/views/common/inputs/textInput.dart';
 import 'package:template/views/common/layout/spacer.dart';
 import 'package:template/views/common/popups/showLoading.dart';
@@ -59,7 +59,7 @@ class _LoginState extends State<Login> {
     var res = await loginData.checkTelCode(telInput.text, code);
     if (res != null && res.success) {
       print("yesh, login successed");
-      await context.login(res.data!, res.token!);
+      await context.login(res.data!.user, res.data!.token);
       hideLoading(context);
       Navigator.pop(context);
       return;
@@ -101,7 +101,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   V60(),
-                  Text(loginData.loginStep == 1 ? "手机号" : "验证码",
+                  Text(loginData.loginStep == 1 ? "登录" : "验证码",
                       style: bigTitle),
                   V60(),
                   if (!userInputing) V60(),
@@ -112,6 +112,11 @@ class _LoginState extends State<Login> {
                         textEditingController: telInput,
                         title: "",
                         width: size.width,
+                        tailling: ClickIcon(
+                          icon: Icons.arrow_forward,
+                          active: userAgree,
+                          onTap: _telLogin,
+                        ),
                         keyBoard: TextInputType.number,
                       ),
                     ),
@@ -151,14 +156,14 @@ class _LoginState extends State<Login> {
                     ),
                   V60(),
                   // V60(),
-                  if (loginData.loginStep == 1)
-                    Center(
-                        child: BigButton(
-                      onPress: _telLogin,
-                      disabled: !userAgree,
-                      txt: '下一步',
-                    )),
-                  V60(),
+                  // if (loginData.loginStep == 1)
+                  //   Center(
+                  //       child: BigButton(
+                  //     onPress: _telLogin,
+                  //     disabled: !userAgree,
+                  //     txt: '下一步',
+                  //   )),
+                  // V60(),
                   if (loginData.loginStep == 1)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

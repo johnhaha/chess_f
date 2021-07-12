@@ -4,7 +4,7 @@ import 'package:template/constants/size.dart';
 import 'colors.dart';
 
 var appTheme = ThemeData(
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
     backgroundColor: PageColor,
     primaryColor: MainColor,
     errorColor: AlertColor,
@@ -36,19 +36,23 @@ var bodyText2 = TextStyle(
 var bodyText3 = TextStyle(
     fontSize: BodySize1, color: DisColor, fontWeight: FontWeight.normal);
 var whiteBodyText = TextStyle(
-    fontSize: BodySize1, color: CardWhiteColor, fontWeight: FontWeight.normal);
+    fontSize: BodySize1, color: PageColor, fontWeight: FontWeight.normal);
 var smallBodyText = TextStyle(
     fontSize: BodySize2, color: TextColor, fontWeight: FontWeight.normal);
 var highLightText = TextStyle(
     fontSize: BodySize1, color: HighLightColor, fontWeight: FontWeight.bold);
+var clickText = TextStyle(
+    fontSize: BodySize1, color: MainColor, fontWeight: FontWeight.bold);
 
 //title text
 var titleText1 = TextStyle(
     fontSize: TitleSize1, color: TextColor, fontWeight: FontWeight.normal);
 var titleText2 = TextStyle(
-    fontSize: TitleSize2, color: TextColor, fontWeight: FontWeight.bold);
+    fontSize: TitleSize2, color: TextColor, fontWeight: FontWeight.normal);
 var titleText3 = TextStyle(
     fontSize: TitleSize3, color: TextColor, fontWeight: FontWeight.normal);
+var titleTextHL = TextStyle(
+    fontSize: TitleSize2, color: HighLightColor, fontWeight: FontWeight.normal);
 
 var bigButtonStyle = ButtonStyle(
     backgroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -63,7 +67,7 @@ var bigButtonStyle = ButtonStyle(
         EdgeInsets.symmetric(horizontal: 20, vertical: 10)),
     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(24),
       // side: BorderSide(color: Colors.red),
     )),
     textStyle: MaterialStateProperty.all<TextStyle>(bodyText1));

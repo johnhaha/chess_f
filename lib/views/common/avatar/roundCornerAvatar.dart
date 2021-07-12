@@ -1,49 +1,61 @@
 import 'package:flutter/material.dart';
 import 'package:template/constants/colors.dart';
+import 'package:template/constants/hosts.dart';
 import 'package:template/constants/size.dart';
-import 'package:template/constants/theme.dart';
-import 'package:template/views/common/layout/spacer.dart';
+import 'package:template/views/common/avatar/roundAvatar.dart';
 
-class RoundCornerAvatarWithName extends StatelessWidget {
-  const RoundCornerAvatarWithName({
+class RoundCornerAvatar extends StatelessWidget {
+  const RoundCornerAvatar({
     Key? key,
-    required this.iamgeUrl,
-    required this.name,
-    required this.noAvatar,
+    required this.size,
+    required this.url,
   }) : super(key: key);
-  final String iamgeUrl;
-  final String name;
-  final bool noAvatar;
+
+  final AvatarSize size;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        noAvatar
-            ? Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: PageColor,
-                    border: Border.all(color: CardWhiteColor, width: 2),
-                    borderRadius:
-                        BorderRadius.all(Radius.circular(BorderRadiusSize2))),
-              )
-            : ClipRRect(
-                borderRadius: BorderRadius.circular(BorderRadiusSize2),
-                child: Image.network(
-                  iamgeUrl,
-                  width: 60,
-                  height: 60,
-                  fit: BoxFit.cover,
-                ),
-              ),
-        H10(),
-        Text(
-          name,
-          style: bodyText1,
-        )
-      ],
+    var _radius = getRoundCornerAvatarRadius(size);
+    var _size = getRoundCornerAvatarSize(size);
+    if (url != "") {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(_radius),
+        child: Image.network(
+          "$imageHost/$url",
+          width: _size,
+          height: _size,
+          fit: BoxFit.cover,
+        ),
+      );
+    }
+    return Container(
+      width: _size,
+      height: _size,
+      decoration: BoxDecoration(
+          color: CardWhiteColor, borderRadius: BorderRadius.circular(_radius)),
     );
+  }
+}
+
+double getRoundCornerAvatarRadius(AvatarSize size) {
+  switch (size) {
+    case AvatarSize.Big:
+      return AvatarRadius1;
+    case AvatarSize.Middle:
+      return AvatarRadius2;
+    case AvatarSize.Small:
+      return AvatarRadius3;
+  }
+}
+
+double getRoundCornerAvatarSize(AvatarSize size) {
+  switch (size) {
+    case AvatarSize.Big:
+      return AvatarSize1;
+    case AvatarSize.Middle:
+      return AvatarSize2;
+    case AvatarSize.Small:
+      return AvatarSize3;
   }
 }

@@ -1,4 +1,7 @@
 import 'package:template/data/common/content.dart';
+import 'package:template/data/common/user.dart';
+
+import 'activity.dart';
 
 class Post {
   Post({
@@ -73,4 +76,36 @@ PostType getPostType(String postTypeStr) {
     default:
       return PostType.unknown;
   }
+}
+
+class PostWithActivity {
+  PostWithActivity(
+      {required this.post, required this.activity, required this.isLike});
+
+  Post post;
+  Activity activity;
+  bool isLike;
+
+  factory PostWithActivity.fromJson(Map<String, dynamic> json) =>
+      PostWithActivity(
+        post: Post.fromJson(json["post"]),
+        activity: Activity.fromJson(json["activity"]),
+        isLike: json["isLike"],
+      );
+}
+
+class PostWithActivityAndUser {
+  PostWithActivityAndUser({
+    required this.post,
+    required this.user,
+  });
+
+  PostWithActivity post;
+  UserInfo user;
+
+  factory PostWithActivityAndUser.fromJson(Map<String, dynamic> json) =>
+      PostWithActivityAndUser(
+        post: PostWithActivity.fromJson(json["post"]),
+        user: UserInfo.fromJson(json["user"]),
+      );
 }

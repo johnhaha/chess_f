@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:template/views/common/buttons/normalButton.dart';
+import 'package:template/constants/colors.dart';
 
 class SheetWithHeadButton extends StatelessWidget {
-  const SheetWithHeadButton(
-      {Key? key,
-      required this.children,
-      this.topRightButtonText = "确定",
-      this.topLeftButtonText = "取消",
-      required this.submit,
-      this.showSubmit = true})
-      : super(key: key);
+  const SheetWithHeadButton({
+    Key? key,
+    required this.children,
+    required this.submit,
+    required this.back,
+    this.forword,
+  }) : super(key: key);
   final List<Widget> children;
-  final String topRightButtonText;
-  final String topLeftButtonText;
-  final Function submit;
-  final bool showSubmit;
+  final Function? submit;
+  final Widget back;
+  final Widget? forword;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: PageColor,
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();
@@ -44,21 +42,17 @@ class SheetWithHeadButton extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextButton(
-                          onPressed: () {
+                      GestureDetector(
+                          onTap: () {
                             Navigator.pop(context);
                           },
-                          child: Text(
-                            topLeftButtonText,
-                            style: Theme.of(context).textTheme.button,
-                          )),
-                      if (showSubmit)
-                        NormalButton(
-                          title: topRightButtonText,
-                          onPress: () {
-                            submit();
-                          },
-                        )
+                          child: back),
+                      if (forword != null)
+                        GestureDetector(
+                            onTap: () {
+                              submit!();
+                            },
+                            child: forword!)
                     ],
                   ),
                 ),

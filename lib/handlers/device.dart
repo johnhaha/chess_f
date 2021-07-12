@@ -54,12 +54,14 @@ Future<String?> registerUserDevice(String userID) async {
     await plainNotificationToken.onIosSettingsRegistered.first;
     token = await plainNotificationToken.getToken();
     if (token != null) {
-      await addPushDevice(userID, token, PushChanel.ios, PushSupplier.apple);
+      await PushService.addPushDevice(
+          userID, token, PushChanel.ios, PushSupplier.apple);
     }
   } else if (Platform.isAndroid) {
     print("yeah registering android push id");
     token = await getJpushDeviceID();
-    await addPushDevice(userID, token, PushChanel.android, PushSupplier.jpush);
+    await PushService.addPushDevice(
+        userID, token, PushChanel.android, PushSupplier.jpush);
   }
   print("token是$token");
   return token;

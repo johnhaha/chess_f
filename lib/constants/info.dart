@@ -1,2 +1,2 @@
 const AppName = "template";
-const AppVersion = 2.0;
+const AppVersion = 1.0;

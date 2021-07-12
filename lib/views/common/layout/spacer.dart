@@ -27,6 +27,15 @@ class V60 extends StatelessWidget {
   }
 }
 
+class H8 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 8,
+    );
+  }
+}
+
 class H10 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,16 +1,16 @@
 const Hosts = [
   "http://localhost",
-  "http://192.168.50.133",
+  "http://192.168.50.54",
   "http://10.23.16.203"
 ];
-var envHost = Hosts[1];
+var envHost = Hosts[0];
 
 enum EnvType { test, pre, prod }
 
-const AppEnv = EnvType.prod;
+const AppEnv = EnvType.test;
 
 // const SampleNetworkImage = "image/8a3fa73e-8b62-4589-839f-c1b912dd3cb4.jpg";
-const SampleNetworkImage = "image/sample.jpg";
+const SampleNetworkImage = "sample.png";
 const SampleUserID = "75bcd23";
 const SampleImageID = "1fc2a24c-8e81-433e-9794-f41b3bc5dead";
 

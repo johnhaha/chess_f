@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
-const MainColor = Color(0xFF6432FF);
-const TextColor = Color(0xFFEEF5F8);
-const AlertColor = Color(0xFFF64F33);
-const PageColor = Color(0xFF100E19);
-const DisColor = Color(0xFF6A7D98);
-const CardWhiteColor = Color(0xFF1C1C24);
-const CardHLColor = Color(0xFF1B1B23);
-const HighLightColor = Color(0xFF846ECB);
-const ClickColor = Color(0xFF444468);
+//theme
+const MainColor = Color(0xFF3B71FE);
+const AlertColor = Color(0xFFF86C59);
+const NoticeColor = Color(0xFF58C37D);
+const PageColor = Color(0xFFFFFFFF);
+const HighLightColor = Color(0xFFFFD167);
+const ClickColor = Color(0xFF242630);
+const LineColor = Color(0xFFE7E7EA);
+const ShadowColor = Color(0xFFEAEAE9);
+
+//text
+const TextColor = Color(0xFF242630);
+const DisColor = Color(0xFF8E9096);
+
+//card
+const CardWhiteColor = Color(0xFFF3F5F7);
+const CardHLColor1 = Color(0xFFD3EFDC);
+const CardHLColor2 = Color(0xFFE8F7E0);

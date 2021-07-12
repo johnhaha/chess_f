@@ -8,4 +8,9 @@ extension screen on BuildContext {
   Size getSize() {
     return MediaQuery.of(this).size;
   }
+
+  bool checkKeyboard() {
+    print(MediaQuery.of(this).viewInsets.bottom);
+    return MediaQuery.of(this).viewInsets.bottom != 0;
+  }
 }

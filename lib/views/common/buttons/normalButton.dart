@@ -51,7 +51,7 @@ class _NormalButtonState extends State<NormalButton> {
               ))
           : Text(
               widget.title,
-              style: smallBodyText,
+              style: whiteBodyText,
             ),
       style: widget.disabled ? normalButtonDisableStyle : normalButtonStyle,
     );

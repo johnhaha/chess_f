@@ -36,17 +36,19 @@ class NormalTextButton extends StatelessWidget {
   }
 }
 
-enum TheButtonStyle { normal, highlight, alert, disabled }
+enum TheButtonStyle { normal, highlight, alert, disabled, clickable }
 
 TextStyle getNormalTextButtonStyle(TheButtonStyle style) {
   switch (style) {
     case TheButtonStyle.alert:
-      return TextStyle(color: AlertColor, fontSize: TitleSize2);
+      return TextStyle(color: AlertColor, fontSize: BodySize1);
     case TheButtonStyle.normal:
       return bodyText1;
     case TheButtonStyle.highlight:
       return highLightText;
     case TheButtonStyle.disabled:
       return bodyText2;
+    case TheButtonStyle.clickable:
+      return clickText;
   }
 }

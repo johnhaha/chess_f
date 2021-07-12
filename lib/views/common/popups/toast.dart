@@ -11,7 +11,7 @@ showTextToast(BuildContext context, String content) {
     ),
     duration: const Duration(seconds: 1),
     action: SnackBarAction(
-      textColor: HighLightColor,
+      textColor: MainColor,
       label: '好的',
       onPressed: ScaffoldMessenger.of(context).hideCurrentSnackBar,
     ),

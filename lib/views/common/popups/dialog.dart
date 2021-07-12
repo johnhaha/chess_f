@@ -1,3 +1,4 @@
+import 'package:template/constants/colors.dart';
 import 'package:template/constants/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,7 @@ showTextAlert(
                 },
                 child: Text(
                   "确认",
-                  style: highLightText,
+                  style: clickText,
                 ))
           ],
         );

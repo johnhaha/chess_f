@@ -3,7 +3,7 @@ import 'package:template/constants/colors.dart';
 import 'package:template/constants/contact.dart';
 import 'package:template/extensions/screen.dart';
 import 'package:flutter/material.dart';
-import 'package:template/views/common/base/appBar.dart';
+import 'package:template/views/common/bases/appBar.dart';
 import 'package:template/views/common/buttons/bigButton.dart';
 import 'package:template/views/common/inputs/textInput.dart';
 import 'package:template/views/common/layout/spacer.dart';

@@ -14,7 +14,7 @@ extension UserInfos on BuildContext {
     if (login) {
       var user = read(userData).user;
       if (user != null) {
-        return user.uid;
+        return user.userID;
       }
     }
   }
@@ -22,7 +22,7 @@ extension UserInfos on BuildContext {
   UserInfo? getUserInfo() {
     var user = read(userData).user;
     if (user != null) {
-      return user.userInfo;
+      return user;
     }
   }
 

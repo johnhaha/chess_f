@@ -17,8 +17,8 @@ Future showReportModal(
               inputTitle: '举报',
               submitTitle: '提交',
               onSubmit: (content) async {
-                var res =
-                    await addReport(userID, targetID, targetType, content);
+                var res = await ReportService.addReport(
+                    userID, targetID, targetType, content);
                 if (res) {
                   Navigator.pop(context);
                 }

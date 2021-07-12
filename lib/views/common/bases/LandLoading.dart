@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 
 class LandLoading extends StatelessWidget {
   LandLoading(
-      {required this.child,
-      required this.loadComplete,
-      required this.loadMore});
+      {required this.child, required this.loadStatus, required this.loadMore});
   final Widget child;
-  final bool loadComplete;
+  final LoadStatus loadStatus;
   final bool loadMore;
 
   @override
@@ -15,12 +13,13 @@ class LandLoading extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
-        child,
-        if (!loadComplete)
+        if (loadStatus == LoadStatus.Loading)
           Center(
               child: CircularProgressIndicator(
             color: MainColor,
           )),
+        if (loadStatus == LoadStatus.OK) child,
+        if (loadStatus == LoadStatus.Failed) Center(child: Text("加载失败")),
         if (loadMore)
           Positioned(
               bottom: 20,
@@ -31,3 +30,5 @@ class LandLoading extends StatelessWidget {
     );
   }
 }
+
+enum LoadStatus { Loading, OK, Failed }

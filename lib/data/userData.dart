@@ -7,13 +7,13 @@ final userData = ChangeNotifierProvider((ref) => UserData());
 
 class UserData extends ChangeNotifier {
   bool _login = false;
-  User? _user;
+  UserInfo? _user;
   String _token = '';
   String _deviceID = "";
   bool _cameraAuth = false;
   bool _geoAuth = false;
   bool get login => _login;
-  User? get user => _user;
+  UserInfo? get user => _user;
   String get token => _token;
   String get deviceID => _deviceID;
   bool get cameraAuth => _cameraAuth;
@@ -59,7 +59,7 @@ class UserData extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setUser(User theUser) {
+  void setUser(UserInfo theUser) {
     _user = theUser;
     notifyListeners();
   }
@@ -71,28 +71,26 @@ class UserData extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future tokenLogin(String token) async {}
-  Future userLogout(String token, String userID, String deviceID) async {}
   static Future addPushDevice() async {}
 }
 
-class CheckLoginRes {
-  CheckLoginRes({
-    this.data,
-    required this.message,
-    required this.success,
-    this.token,
-  });
+// class CheckLoginRes {
+//   CheckLoginRes({
+//     this.data,
+//     required this.message,
+//     required this.success,
+//     this.token,
+//   });
 
-  User? data;
-  String message;
-  bool success;
-  String? token;
+//   User? data;
+//   String message;
+//   bool success;
+//   String? token;
 
-  factory CheckLoginRes.fromJson(Map<String, dynamic> json) => CheckLoginRes(
-        data: User.fromJson(json['data']),
-        message: json['message'],
-        success: json['success'],
-        token: json['token'],
-      );
-}
+//   factory CheckLoginRes.fromJson(Map<String, dynamic> json) => CheckLoginRes(
+//         data: User.fromJson(json['data']),
+//         message: json['message'],
+//         success: json['success'],
+//         token: json['token'],
+//       );
+// }

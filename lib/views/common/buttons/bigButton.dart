@@ -26,7 +26,7 @@ class BigButton extends StatelessWidget {
         },
         child: Text(
           txt,
-          style: disabled ? bodyText3 : bodyText1,
+          style: disabled ? bodyText3 : whiteBodyText,
         ),
         style: disabled ? bigGreyButtonStyle : bigButtonStyle,
       ),

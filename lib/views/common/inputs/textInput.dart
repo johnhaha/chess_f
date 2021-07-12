@@ -17,6 +17,7 @@ class CustomTextInput extends StatelessWidget {
     this.padding = 20,
     this.height = 60,
     this.tailling,
+    this.enabled = true,
   }) : super(key: key);
 
   final TextEditingController textEditingController;
@@ -31,6 +32,7 @@ class CustomTextInput extends StatelessWidget {
   final Widget? tailling;
   final FocusNode? focusNode;
   final double padding;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -61,15 +63,17 @@ class CustomTextInput extends StatelessWidget {
             width: width,
             height: height,
             decoration: BoxDecoration(
-                color: Theme.of(context).cardColor,
-                borderRadius: BorderRadius.circular(12)),
+              borderRadius: BorderRadius.circular(30),
+              border: Border.all(color: LineColor),
+            ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
               child: Row(
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Flexible(
                     child: TextField(
+                      enabled: enabled,
                       focusNode: focusNode,
                       style: TextStyle(
                           letterSpacing: 1,
