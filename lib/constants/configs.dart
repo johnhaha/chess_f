@@ -1,20 +1,81 @@
-const Hosts = [
-  "http://localhost",
-  "http://192.168.50.54",
-  "http://10.23.16.203"
-];
-var envHost = Hosts[0];
+import 'package:hey/configs/app.dart';
+import 'package:hey/services/sugar/assets.dart';
+import 'package:ku/style/color.dart';
+import 'package:ku/style/size.dart';
+import 'package:ku/style/theme.dart';
+import 'package:flutter/material.dart';
 
-enum EnvType { test, pre, prod }
+var sugarAsset = SugarAssets(sugarHost: sugarHost.host);
 
-const AppEnv = EnvType.test;
+var appTheme = AppTheme(appColor, appSize);
 
-// const SampleNetworkImage = "image/8a3fa73e-8b62-4589-839f-c1b912dd3cb4.jpg";
-const SampleNetworkImage = "sample.png";
-const SampleUserID = "75bcd23";
-const SampleImageID = "1fc2a24c-8e81-433e-9794-f41b3bc5dead";
+var appInfo = AppInfo(
+  appName: "template",
+  appVersion: 1.0,
+  userAgreeUrl: "https://www.notion.so/d2f1bc8a700f45ada379ef36c7d7fd18",
+  privacyUrl: "https://www.notion.so/6b1131230c484441acb8e1fc117601f0",
+  jpushAppKey: "jpushAppKey",
+  ossImageAddr: 'https://kuaimai-media.oss-cn-shanghai.aliyuncs.com',
+);
 
-const UserAgreeUrl = "https://www.notion.so/d2f1bc8a700f45ada379ef36c7d7fd18";
-const PrivacyUrl = "https://www.notion.so/6b1131230c484441acb8e1fc117601f0";
+var appHost = ServiceHost(
+    testHost: "http://localhost",
+    preHost: "http://192.168.50.54",
+    prodHost: "http://10.23.16.203",
+    envType: EnvType.test);
 
-const JpushAppKey = "ea350587d6d3d5d08b6d3d24";
+var sugarHost = ServiceHost(
+    testHost: "http://localhost:3007",
+    preHost: "https://olive-res.gulu.online",
+    prodHost: "https://res.kuaimai.fun",
+    envType: EnvType.test);
+
+var forkHost = ServiceHost(
+    testHost: "http://localhost:3111",
+    preHost: "https://olive-fork.gulu.online",
+    prodHost: "https://fork.kuaimai.fun",
+    envType: EnvType.test);
+
+var appColor = AppColor(
+    MainColor: const Color(0xFF3B71FE),
+    AlertColor: const Color(0xFFF86C59),
+    NoticeColor: const Color(0xFF58C37D),
+    PageColor: const Color(0xFFFFFFFF),
+    HighLightColor: const Color(0xFFFFD167),
+    ClickColor: const Color(0xFF242630),
+    LineColor: const Color(0xFFE7E7EA),
+    ShadowColor: const Color(0xFFEAEAE9),
+    TextColor: const Color(0xFF242630),
+    DisColor: const Color(0xFF8E9096),
+    CardWhiteColor: const Color(0xFFF3F5F7),
+    CardHLColor1: const Color(0xFFD3EFDC),
+    CardHLColor2: const Color(0xFFE8F7E0));
+
+var appSize = AppSize(
+    TitleSize1: 48.0,
+    TitleSize2: 32.0,
+    TitleSize3: 24.0,
+    AvatarRadius1: 32.0,
+    AvatarRadius2: 24.0,
+    AvatarRadius3: 12.0,
+    AvatarSize1: 128.0,
+    AvatarSize2: 48.0,
+    AvatarSize3: 24.0,
+    ImageSize1: 168.0,
+    ImageSize2: 128.0,
+    IconSize1: 32.0,
+    IconSize2: 16.0,
+    BorderRadiusSize1: 32.0,
+    BorderRadiusSize2: 24.0,
+    BorderRadiusSize3: 12.0,
+    PaddingSize1: 32.0,
+    PaddingSize2: 16.0,
+    PaddingSize3: 8.0,
+    BodySize1: 16.0,
+    BodySize2: 14.0,
+    MarginSize1: 20.0,
+    MarginSize2: 10.0,
+    ButtonWidth1: 160.0,
+    ButtonHeight1: 48.0,
+    ButtonWidth2: 70.0,
+    ButtonHeight2: 30.0);

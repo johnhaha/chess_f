@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:template/constants/colors.dart';
-import 'package:template/constants/theme.dart';
-import 'package:template/data/appData.dart';
-import 'package:template/data/userData.dart';
+import 'package:template/constants/configs.dart';
+import 'package:template/data/app_data.dart';
 import 'package:badges/badges.dart';
 
 class TabPage extends StatefulWidget {
+  const TabPage({Key? key}) : super(key: key);
+
   @override
   _TabPageState createState() => _TabPageState();
 }
@@ -24,12 +24,12 @@ class _TabPageState extends State<TabPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: PageColor,
+      backgroundColor: appColor.PageColor,
       body: _tabPages.elementAt(_currentIndex),
       bottomNavigationBar: BottomAppBar(
-        color: PageColor,
+        color: appColor.PageColor,
         shape: CircularNotchedRectangle(),
-        child: Container(
+        child: SizedBox(
           height: 60,
           child: Stack(
             alignment: Alignment.center,
@@ -89,13 +89,13 @@ class _TabPageState extends State<TabPage> {
                   bottom: 20,
                   child: Consumer(
                     builder: (context, watch, child) {
-                      var login = watch(userData).login;
+                      // var login = watch(userData).login;
                       return GestureDetector(
                           onTap: () {},
                           child: Icon(
                             Icons.add_circle,
                             size: 36,
-                            color: MainColor,
+                            color: appColor.MainColor,
                           ));
                     },
                   ))
@@ -140,12 +140,14 @@ class BottomTabIcon extends StatelessWidget {
             badgeContent: badgeNum > 0
                 ? Text(
                     "$badgeNum",
-                    style: smallBodyText,
+                    style: appTheme.smallBodyText,
                   )
                 : null,
             child: Icon(icon,
                 size: 24.0,
-                color: _currentIndex == tag ? MainColor : ClickColor),
+                color: _currentIndex == tag
+                    ? appColor.MainColor
+                    : appColor.ClickColor),
           ),
         ));
   }
