@@ -16,6 +16,7 @@ var appInfo = AppInfo(
   privacyUrl: "https://www.notion.so/6b1131230c484441acb8e1fc117601f0",
   jpushAppKey: "jpushAppKey",
   ossImageAddr: 'https://kuaimai-media.oss-cn-shanghai.aliyuncs.com',
+  sampleNetImage: 'sample.png',
 );
 
 var appHost = ServiceHost(
@@ -52,30 +53,46 @@ var appColor = AppColor(
     CardHLColor2: const Color(0xFFE8F7E0));
 
 var appSize = AppSize(
-    TitleSize1: 48.0,
-    TitleSize2: 32.0,
-    TitleSize3: 24.0,
-    AvatarRadius1: 32.0,
-    AvatarRadius2: 24.0,
-    AvatarRadius3: 12.0,
-    AvatarSize1: 128.0,
-    AvatarSize2: 48.0,
-    AvatarSize3: 24.0,
-    ImageSize1: 168.0,
-    ImageSize2: 128.0,
-    IconSize1: 32.0,
-    IconSize2: 16.0,
-    BorderRadiusSize1: 32.0,
-    BorderRadiusSize2: 24.0,
-    BorderRadiusSize3: 12.0,
-    PaddingSize1: 32.0,
-    PaddingSize2: 16.0,
-    PaddingSize3: 8.0,
-    BodySize1: 16.0,
-    BodySize2: 14.0,
-    MarginSize1: 20.0,
-    MarginSize2: 10.0,
-    ButtonWidth1: 160.0,
-    ButtonHeight1: 48.0,
-    ButtonWidth2: 70.0,
-    ButtonHeight2: 30.0);
+  TitleSize1: 48.0,
+  TitleSize2: 32.0,
+  TitleSize3: 24.0,
+
+  //avatar radius
+  AvatarRadius1: 64.0,
+  AvatarRadius2: 24.0,
+  AvatarRadius3: 12.0,
+
+  //avatar
+  AvatarSize1: 128.0,
+  AvatarSize2: 48.0,
+  AvatarSize3: 24.0,
+  //image
+  ImageSize1: 168.0,
+  ImageSize2: 128.0,
+  ImageSize3: 48.0,
+
+  //icon
+  IconSize1: 48.0,
+  IconSize2: 32.0,
+  IconSize3: 16.0,
+  //radius
+  BorderRadiusSize1: 32.0,
+  BorderRadiusSize2: 24.0,
+  BorderRadiusSize3: 12.0,
+  PaddingSize1: 24.0,
+  PaddingSize2: 12.0,
+  PaddingSize3: 8.0,
+  //text size
+  BodySize1: 18.0,
+  BodySize2: 14.0,
+  //margin
+  MarginSize1: 24.0,
+  MarginSize2: 12.0,
+  ButtonWidth1: 160.0,
+  ButtonHeight1: 48.0,
+  ButtonWidth2: 70.0,
+  ButtonHeight2: 30.0,
+  //input
+  inputHeight1: 150,
+  inputHeight2: 60,
+);
