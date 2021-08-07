@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'template',
-      theme: appTheme.mainTheme,
+      theme: magicTheme.mainTheme,
       debugShowCheckedModeBanner: false,
       home: TabPage(),
     );

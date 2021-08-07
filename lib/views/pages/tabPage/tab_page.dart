@@ -24,10 +24,10 @@ class _TabPageState extends State<TabPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appColor.PageColor,
+      backgroundColor: magicTheme.pageColor,
       body: _tabPages.elementAt(_currentIndex),
       bottomNavigationBar: BottomAppBar(
-        color: appColor.PageColor,
+        color: magicTheme.pageColor,
         shape: CircularNotchedRectangle(),
         child: SizedBox(
           height: 60,
@@ -95,7 +95,7 @@ class _TabPageState extends State<TabPage> {
                           child: Icon(
                             Icons.add_circle,
                             size: 36,
-                            color: appColor.MainColor,
+                            color: magicColor.colorful1,
                           ));
                     },
                   ))
@@ -140,14 +140,14 @@ class BottomTabIcon extends StatelessWidget {
             badgeContent: badgeNum > 0
                 ? Text(
                     "$badgeNum",
-                    style: appTheme.smallBodyText,
+                    style: magicTheme.text1,
                   )
                 : null,
             child: Icon(icon,
                 size: 24.0,
                 color: _currentIndex == tag
-                    ? appColor.MainColor
-                    : appColor.ClickColor),
+                    ? magicColor.colorful
+                    : magicTheme.clickColor),
           ),
         ));
   }
