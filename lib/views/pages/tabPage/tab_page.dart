@@ -95,7 +95,7 @@ class _TabPageState extends State<TabPage> {
                           child: Icon(
                             Icons.add_circle,
                             size: 36,
-                            color: magicColor.colorful1,
+                            color: magicColor.colorfulPack.color1,
                           ));
                     },
                   ))
