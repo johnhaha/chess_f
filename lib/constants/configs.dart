@@ -1,6 +1,5 @@
 import 'package:hey/configs/app.dart';
 import 'package:hey/configs/assets.dart';
-import 'package:hey/services/sugar/assets.dart';
 import 'package:ku/style/color.dart';
 import 'package:ku/style/size.dart';
 import 'package:ku/style/theme.dart';
@@ -47,4 +46,5 @@ var magicColor = MagicColor(
     colorful: const Color(0xFF3165D5),
     black: const Color(0xFF262D40),
     highlight: const Color(0xFF20BFC3),
-    white: const Color(0xFFF3F5F7));
+    white: const Color(0xFFF3F5F7),
+    colorfulReverse: false);

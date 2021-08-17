@@ -140,7 +140,7 @@ class BottomTabIcon extends StatelessWidget {
             badgeContent: badgeNum > 0
                 ? Text(
                     "$badgeNum",
-                    style: magicTheme.text1,
+                    style: magicTheme.textPack.text1,
                   )
                 : null,
             child: Icon(icon,
