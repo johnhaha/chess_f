@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:template/constants/configs.dart';
+import 'package:template/constants/style.dart';
 import 'package:template/data/app_data.dart';
 import 'package:badges/badges.dart';
 

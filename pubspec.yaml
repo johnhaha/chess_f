@@ -29,10 +29,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   badges: ^2.0.1
-  ku:
-    path: ../../pkg/ku
   hey:
     path: ../../pkg/hey
+  magic:
+    path: ../../pkg/magic
+  hole:
+    path: ../../pkg/hole
   flutter_native_splash: ^1.2.0
 
 
