@@ -8,7 +8,8 @@ var appConnection = AppConnection(
     app: appHost,
     userOnline: userOnlineHost,
     subRelationOnline: subRelationOnlineHost,
-    envType: EnvType.test);
+    envType: EnvType.test,
+    subNewMsg: subNewMsgHost);
 
 var appInfo = AppInfo(
   appName: "snack",

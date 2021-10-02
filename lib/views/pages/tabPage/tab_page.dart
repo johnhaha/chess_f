@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:magic/components/icon/bottom_tab_icon.dart';
 import 'package:template/constants/style.dart';
 import 'package:template/data/app_data.dart';
-import 'package:badges/badges.dart';
 
 class TabPage extends StatefulWidget {
   const TabPage({Key? key}) : super(key: key);
@@ -19,7 +19,12 @@ class _TabPageState extends State<TabPage> {
     });
   }
 
-  List<Widget> _tabPages = <Widget>[Text("1"), Text("2"), Text("3"), Text("4")];
+  List<Widget> _tabPages = const <Widget>[
+    Text("1"),
+    Text("2"),
+    Text("3"),
+    Text("4")
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class _TabPageState extends State<TabPage> {
       body: _tabPages.elementAt(_currentIndex),
       bottomNavigationBar: BottomAppBar(
         color: magicTheme.pageColor,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         child: SizedBox(
           height: 60,
           child: Stack(
@@ -40,6 +45,7 @@ class _TabPageState extends State<TabPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     BottomTabIcon(
+                      magicTheme: magicTheme,
                       currentIndex: _currentIndex,
                       onTap: () {
                         _onTabTapped(0);
@@ -48,6 +54,7 @@ class _TabPageState extends State<TabPage> {
                       icon: Icons.pets,
                     ),
                     BottomTabIcon(
+                      magicTheme: magicTheme,
                       currentIndex: _currentIndex,
                       onTap: () {
                         _onTabTapped(1);
@@ -63,6 +70,7 @@ class _TabPageState extends State<TabPage> {
                       builder: (context, watch, child) {
                         var showBadget = watch(appData).msgBadget;
                         return BottomTabIcon(
+                          magicTheme: magicTheme,
                           currentIndex: _currentIndex,
                           onTap: () {
                             _onTabTapped(2);
@@ -81,6 +89,7 @@ class _TabPageState extends State<TabPage> {
                       },
                       tag: 3,
                       icon: Icons.person,
+                      magicTheme: magicTheme,
                     ),
                   ],
                 ),
@@ -104,51 +113,5 @@ class _TabPageState extends State<TabPage> {
         ),
       ),
     );
-  }
-}
-
-class BottomTabIcon extends StatelessWidget {
-  const BottomTabIcon({
-    Key? key,
-    int? currentIndex,
-    required this.onTap,
-    this.tag,
-    this.icon,
-    this.badgeNum = 0,
-    this.showBadge = false,
-  })  : _currentIndex = currentIndex,
-        super(key: key);
-
-  final int? _currentIndex;
-  final Function onTap;
-  final int? tag;
-  final IconData? icon;
-  final int badgeNum;
-  final bool showBadge;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () {
-          onTap();
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Badge(
-            showBadge: showBadge,
-            badgeContent: badgeNum > 0
-                ? Text(
-                    "$badgeNum",
-                    style: magicTheme.textPack.text1,
-                  )
-                : null,
-            child: Icon(icon,
-                size: 24.0,
-                color: _currentIndex == tag
-                    ? magicColor.colorful
-                    : magicTheme.clickColor),
-          ),
-        ));
   }
 }
