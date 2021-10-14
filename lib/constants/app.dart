@@ -20,4 +20,4 @@ var appInfo = AppInfo(
   inviteOnly: false,
 );
 
-var mediaAssets = MediaAssets(mediaHost: 'http://asset.kuiamai.fun');
+var mediaAssets = MediaAssets(baseUrl: 'http://asset.kuiamai.fun');
