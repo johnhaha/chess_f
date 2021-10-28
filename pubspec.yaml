@@ -33,6 +33,8 @@ dependencies:
     path: ../../pkg/hey
   magic:
     path: ../../pkg/magic
+  ku:
+    path: ../../pkg/ku
   hole:
     path: ../../pkg/hole
   flutter_native_splash: ^1.2.0
