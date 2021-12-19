@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:magic/components/icon/bottom_tab_icon.dart';
-import 'package:template/constants/style.dart';
-import 'package:template/data/app_data.dart';
+import 'package:magic/magic.dart';
 
 class TabPage extends StatefulWidget {
   const TabPage({Key? key}) : super(key: key);
@@ -67,8 +66,7 @@ class _TabPageState extends State<TabPage> {
                       child: SizedBox.shrink(),
                     ),
                     Consumer(
-                      builder: (context, watch, child) {
-                        var showBadget = watch(appData).msgBadget;
+                      builder: (context, ref, child) {
                         return BottomTabIcon(
                           magicTheme: magicTheme,
                           currentIndex: _currentIndex,
@@ -76,7 +74,6 @@ class _TabPageState extends State<TabPage> {
                             _onTabTapped(2);
                           },
                           tag: 2,
-                          showBadge: showBadget,
                           // badgeNum: 2,
                           icon: Icons.mail,
                         );
