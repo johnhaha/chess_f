@@ -44,7 +44,6 @@ class _TabPageState extends State<TabPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     BottomTabIcon(
-                      magicTheme: magicTheme,
                       currentIndex: _currentIndex,
                       onTap: () {
                         _onTabTapped(0);
@@ -53,7 +52,6 @@ class _TabPageState extends State<TabPage> {
                       icon: Icons.pets,
                     ),
                     BottomTabIcon(
-                      magicTheme: magicTheme,
                       currentIndex: _currentIndex,
                       onTap: () {
                         _onTabTapped(1);
@@ -68,7 +66,6 @@ class _TabPageState extends State<TabPage> {
                     Consumer(
                       builder: (context, ref, child) {
                         return BottomTabIcon(
-                          magicTheme: magicTheme,
                           currentIndex: _currentIndex,
                           onTap: () {
                             _onTabTapped(2);
@@ -86,7 +83,6 @@ class _TabPageState extends State<TabPage> {
                       },
                       tag: 3,
                       icon: Icons.person,
-                      magicTheme: magicTheme,
                     ),
                   ],
                 ),
