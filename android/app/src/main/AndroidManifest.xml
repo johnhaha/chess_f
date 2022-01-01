@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.template">
+    package="com.example.chess">
+    <uses-permission android:name="android.permission.READ_CONTACTS" />  
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" /> 
    <application
-        android:label="template"
+        android:label="chess"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
