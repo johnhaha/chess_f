@@ -9,7 +9,8 @@ var appConnection = AppConnection(
 );
 
 var appInfo = AppInfo(
-  userAgreeUrl: "https://www.notion.so/d2f1bc8a700f45ada379ef36c7d7fd18",
-  privacyUrl: "https://www.notion.so/6b1131230c484441acb8e1fc117601f0",
+  userAgreeUrl:
+      "https://open-info.notion.site/e1dd7df3322c4979a83fe1f784fbaed8",
+  privacyUrl: "https://open-info.notion.site/b8d9a9f4873f404e8ac19ae98ab4e8db",
   inviteOnly: false,
 );

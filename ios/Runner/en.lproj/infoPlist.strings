@@ -1,0 +1,8 @@
+/* 
+  infoPlist.strings
+  Runner
+
+  Created by Jun Wu on 2022/1/1.
+  
+*/
+"CFBundleDisplayName" = "BanChat";
